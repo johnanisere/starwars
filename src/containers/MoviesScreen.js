@@ -154,7 +154,6 @@ export default class App extends React.Component {
   };
 
   onSortHeight = () => {
-    console.log("yh!");
     const { sortByHeight } = this.state;
     sortByHeight
       ? sortByHeight === "ascending"
@@ -164,7 +163,6 @@ export default class App extends React.Component {
   };
 
   getCharacters = () => {
-    console.log("speak!");
     const { sortByHeight, characters } = this.state;
 
     const knownValues = [...characters].filter(val => val.height !== "unknown");
@@ -272,13 +270,15 @@ export default class App extends React.Component {
                 <Crawl opening={true}>{pending ? "Loading..." : crawl}</Crawl>
               </TableContainer>
 
-              <TableCells
-                name={"Name"}
-                gender={"Gender"}
-                height={"Height"}
-                nameSpace={2}
-                onHeight={this.onSortHeight}
-              />
+              {characters.length && (
+                <TableCells
+                  name={"Name"}
+                  gender={"Gender"}
+                  height={"Height"}
+                  nameSpace={2}
+                  onHeight={this.onSortHeight}
+                />
+              )}
               <TableContainer>
                 {characterPending ? (
                   <TableContent content={true}>Loading...</TableContent>

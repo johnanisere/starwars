@@ -1,8 +1,10 @@
 import React from "react";
 import { Text, View, Image } from "react-native";
+
 import Container from "../components/Container";
-import styled from "styled-components/native";
 import logo from "../../assets/images/logo.png";
+
+import styled from "styled-components/native";
 
 const ImageContaner = styled.View`
   width: 100%;
@@ -20,12 +22,13 @@ const ResponsiveImage = styled.Image`
 
 export default class App extends React.Component {
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <Container>
         <ImageContaner>
           <ResponsiveImage source={logo} resizeMode={"contain"} />
         </ImageContaner>
-        <TextBtn onPress={() => alert("YH")}> start!</TextBtn>
+        <TextBtn onPress={() => navigate("Movies")}>start!</TextBtn>
       </Container>
     );
   }
