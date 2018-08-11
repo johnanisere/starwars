@@ -1,10 +1,16 @@
 import React from "react";
 import { Text, View, Image } from "react-native";
 
-import Container from "../components/Container";
 import logo from "../../assets/images/logo.png";
 
 import styled from "styled-components/native";
+
+const Container = styled.View`
+  flex: 1;
+  background-color: #000;
+  align-items: center;
+  justify-content: center;
+`;
 
 const ImageContaner = styled.View`
   width: 100%;
